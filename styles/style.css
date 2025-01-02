@@ -1,0 +1,48 @@
+body{
+
+    text-align: center;
+    font-size:xx-large;
+    margin-bottom:40px;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content:flex-end;
+    flex-direction: column;
+    
+}
+
+h2{
+    margin-top: 40px;
+}
+form{
+    margin-bottom: 400px;
+}
+
+form input{
+    font-size: 30px;
+}
+
+form button{
+    font-size: 20px;
+    padding: 10px 20px;
+}
+
+.login-page {
+    align-items: center;
+    padding: 30%;
+    height: 100%;
+}
+
+.submit-button {
+    background-color: #ADD8E6;
+    color: white;
+    padding: px 20px;
+    border-radius: 7px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 16px;
+}
+
+.submit-button:hover {
+    background-color: #ADD8E6;
+}
