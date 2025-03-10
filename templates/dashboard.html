@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="../styles/dashboard.css">
+</head>
+<body>
+    <header>
+        <h1 id="user-welcome">Welcome!</h1>
+        <nav>
+            <ul>
+                <li><input type="text" id="search-input" placeholder="Search resources..." onkeyup="searchResources()"></li>
+                <li><a href="#" onclick="showProfile()">Profile</a></li>
+                <li><a href="#" onclick="logout()">Logout</a></li>
+            </ul>
+        </nav>
+    </header>    
+
+    <main>
+        <!-- Profile Section -->
+        <section id="profile">
+            <h2>Profile</h2>
+            <p><span id="user-name">Loading...</span></p>
+            <p><span id="user-email">Loading...</span></p>
+            <button onclick="editProfile()">Edit Profile</button>
+        </section>
+        
+        <!-- Profile Edit Popup -->
+        <div id="edit-profile-popup" class="popup">
+            <h2>Edit Profile</h2>
+            <label for="new-name">New Name:</label>
+            <input type="text" id="new-name" placeholder="Enter new name">
+            <label for="new-email">New Email:</label>
+            <input type="email" id="new-email" placeholder="Enter new email">
+            <button onclick="updateProfile()">Save Changes</button>
+            <button onclick="closePopup()">Cancel</button>
+        </div>
+
+        <!-- Resources Section -->
+        <section id="resources">
+            <h2>Available Resources</h2>
+            <div id="resources-container">
+                <p>Loading resources...</p>
+            </div>
+        </section> 
+        
+        <section>
+            <h2>Search Resources</h2>
+            <input type="text" id="search-input" placeholder="Search..." oninput="searchResources()">
+        </section>
+        
+        <section id="resources-container">
+            <p>Loading resources...</p>
+        </section>
+        
+    </main>
+
+    <script src="../js/dashboard.js" defer></script>
+</body>
+</html>

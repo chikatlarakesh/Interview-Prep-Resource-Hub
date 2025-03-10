@@ -3,34 +3,124 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interview Prep Resource Hub</title>
+    <title>Login</title>
     <link rel="stylesheet" href="/styles/style.css">
     <style>
-        body{
+        body {
             background-image: url("https://tinyurl.com/7b3pz94y");
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
             margin: 0;
             height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .login-container {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 300px;
+        }
+
+        h1 {
+            margin-bottom: 15px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .submit-button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+        }
+
+        .submit-button:hover {
+            background-color: #0056b3;
         }
     </style>
 </head>
 <body>
-    <div class="Login Page">
-        <h1>Login to your account</h1>
-    <br>
-    <main>
-        <form action="">  
-            <label for="email">Email: </label>
-            <input type="email" name="email" id="email" placeholder="Enter your email-id" required> <br><br>
+    <div class="login-container">
+        <h1>Login to Your Account</h1>
 
-            <label for="password">Password: </label>
-            <input type="password" name="password" id="password" placeholder="Enter your password" maxlength="14" required> <br><br>
-            <button type="submit" class="submit-button">Login</button> <br><br>
-            Don't have an account? <button type="button" class="submit-button" title="Create account?" onclick="window.location.href='signup.html'">Signup</button>
+        <form id="login-form">
+            <label for="email">Email:</label>
+            <input type="email" id="email" placeholder="Enter your email-id" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" placeholder="Enter your password" maxlength="14" required>
+
+            <button type="submit" class="submit-button">Login</button>
+
+            <p>Don't have an account? 
+                <button type="button" onclick="window.location.href='signup.html'">Sign Up</button>
+            </p>
         </form>
-    </main>
     </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            console.log("🚀 JavaScript Loaded!"); // Debugging message
+        
+            const loginForm = document.getElementById('login-form');
+        
+            if (!loginForm) {
+                console.error("❌ Error: Login form not found!");
+                return;
+            }
+        
+            loginForm.addEventListener('submit', async (e) => {
+                e.preventDefault(); // Prevents page reload
+        
+                const email = document.getElementById('email').value;
+                const password = document.getElementById('password').value;
+        
+                console.log("📩 Sending login request...");
+        
+                try {
+                    const response = await fetch('http://localhost:3000/login', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ email, password })
+                    });
+        
+                    const data = await response.json();
+                    console.log("📩 Response:", data);
+        
+                    if (response.ok) {
+                        console.log("✅ Storing user data in localStorage...");
+                        localStorage.setItem("token", data.token);
+                        localStorage.setItem("name", data.name);
+                        localStorage.setItem("email", data.email);
+        
+                        alert(data.message);
+                        window.location.href = "dashboard.html"; // Redirect to dashboard
+                    } else {
+                        alert(data.error);
+                    }
+                } catch (error) {
+                    console.error("❌ Error:", error);
+                    alert("Something went wrong! Please try again.");
+                }
+            });
+        });
+        </script>               
 </body>
 </html>
