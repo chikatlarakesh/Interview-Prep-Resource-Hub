@@ -35,7 +35,7 @@
             <label for="new-email">New Email:</label>
             <input type="email" id="new-email" placeholder="Enter new email">
             <button onclick="updateProfile()">Save Changes</button>
-            <button onclick="closePopup()">Cancel</button>
+            <button class="cancel-btn" onclick="closePopup()">Cancel</button>
         </div>
 
         <!-- Resources Section -->
@@ -45,16 +45,6 @@
                 <p>Loading resources...</p>
             </div>
         </section> 
-        
-        <section>
-            <h2>Search Resources</h2>
-            <input type="text" id="search-input" placeholder="Search..." oninput="searchResources()">
-        </section>
-        
-        <section id="resources-container">
-            <p>Loading resources...</p>
-        </section>
-        
     </main>
 
     <script src="../js/dashboard.js" defer></script>

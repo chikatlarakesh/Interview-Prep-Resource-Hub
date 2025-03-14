@@ -52,6 +52,7 @@ nav ul li input {
     text-align: center;
 }
 
+/* Buttons */
 button {
     background-color: #007bff;
     color: white;
@@ -62,10 +63,22 @@ button {
     display: block;
     width: 100%;
     margin-top: 10px;
+    font-size: 16px;
+    font-weight: bold;
 }
 
 button:hover {
     background-color: #0056b3;
+}
+
+/* Cancel Button (for profile popup) */
+.cancel-btn {
+    background-color: #ccc;
+    color: black;
+}
+
+.cancel-btn:hover {
+    background-color: #999;
 }
 
 /* Profile Popup */
@@ -80,6 +93,16 @@ button:hover {
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
     border-radius: 8px;
     z-index: 1000;
+    width: 300px;
+    text-align: center;
+}
+
+.popup input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
 /* Resources Section */

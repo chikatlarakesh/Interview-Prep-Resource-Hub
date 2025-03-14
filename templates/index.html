@@ -3,65 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        header {
-            background-color: #333;
-            color: bisque;
-            padding: 1rem;
-            text-align: center;
-        }
-        .introduction {
-            padding: 2rem;
-            text-align: center;
-        }
-        nav {
-            display: flex;
-            justify-content: center;
-            margin: 2rem 0;
-        }
-        nav button {
-            background-color: #333;
-            color: bisque;
-            border: none;
-            padding: 1rem 2rem;
-            margin: 0 1rem;
-            cursor: pointer;
-            font-size: 1rem;
-        }
-        nav button:hover {
-            background-color: #555;
-        }
-        footer {
-            background-color: #333;
-            color: bisque;
-            text-align: center;
-            padding: 1rem;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
-        }
-    </style>
+    <title>Interview Prep Resource Hub</title>
+    <link rel="stylesheet" href="../styles/index.css">
 </head>
 <body>
+
     <header>
-        <h1 style="color: bisque;">Welcome to Interview Prep Resource Hub!</h1>
+        <h1>Interview Prep Resource Hub</h1>
     </header>
-    <div class="introduction">
-        <p>Your one-stop solution for interview preparation, including resources for DSA, System Design, Operating Systems, and more.</p>
+
+    <section id="intro">
+        <h2>Your Ultimate Guide to Technical Interviews</h2>
+        <p>Prepare for your next software engineering interview with our structured study plans, coding problem solutions, system design resources, and expert advice.</p>
+    </section>
+
+    <section id="features">
+        <div class="feature">
+            <h3>Comprehensive Study Plans</h3>
+            <p>Follow expert-curated schedules to cover all important topics systematically.</p>
+        </div>
+        <div class="feature">
+            <h3>Coding Practice & Solutions</h3>
+            <p>Access categorized LeetCode solutions with step-by-step explanations.</p>
+        </div>
+        <div class="feature">
+            <h3>Mock Interviews</h3>
+            <p>Simulate real interview experiences and get feedback on your performance.</p>
+        </div>
+    </section>
+
+    <div class="button-container">
+        <button onclick="location.href='login.html'">Login</button>
+        <button onclick="location.href='signup.html'">Sign Up</button>
     </div>
-    <nav>
-        <button onclick="window.location.href='login.html';">Login</button>
-        <button onclick="window.location.href='signup.html';">Sign Up</button>
-    </nav>
+
     <footer>
         <p>&copy; 2025 Interview Prep Resource Hub. All rights reserved.</p>
     </footer>
+
 </body>
 </html>

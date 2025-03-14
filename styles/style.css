@@ -1,48 +1,81 @@
-body{
-
-    text-align: center;
-    font-size:xx-large;
-    margin-bottom:40px;
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    background-image: url("https://tinyurl.com/7b3pz94y"); /* Keep the background */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
     display: flex;
-    justify-content:flex-end;
-    flex-direction: column;
-    
-}
-
-h2{
-    margin-top: 40px;
-}
-form{
-    margin-bottom: 400px;
-}
-
-form input{
-    font-size: 30px;
-}
-
-form button{
-    font-size: 20px;
-    padding: 10px 20px;
-}
-
-.login-page {
     align-items: center;
-    padding: 30%;
-    height: 100%;
+    justify-content: center;
 }
 
-.submit-button {
-    background-color: #ADD8E6;
-    color: white;
-    padding: px 20px;
-    border-radius: 7px;
-    cursor: pointer;
+/* Login Container */
+.login-container {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 50px;
+    right: 300%;
+    margin-top: 200px;
+    border-radius: 15px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
     text-align: center;
+    width: 350px;
+}
+
+/* Headings */
+h1 {
+    font-size: 28px;
+    color: #007bff;
+    margin-bottom: 15px;
+}
+
+/* Input Fields */
+input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 6px;
     font-size: 16px;
 }
 
-.submit-button:hover {
-    background-color: #ADD8E6;
+/* Login Button */
+.submit-button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;  /* Reduced padding */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 80%;  /* Reduced width */
+    font-size: 16px;  /* Slightly smaller font */
+    font-weight: bold;
+    transition: background 0.3s ease;
 }
+
+.submit-button:hover {
+    background-color: #0056b3;
+}
+
+/* Sign Up Button */
+.signup-btn {
+    background: none;
+    border: 2px solid #007bff;
+    color: #007bff;
+    font-size: 14px;  /* Reduced font size */
+    font-weight: bold;
+    cursor: pointer;
+    padding: 8px 15px;  /* Reduced padding */
+    border-radius: 5px;
+    margin-left: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+.signup-btn:hover {
+    background-color: #007bff;
+    color: white;
+}
+
