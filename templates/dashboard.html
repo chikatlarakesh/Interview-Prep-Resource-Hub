@@ -12,33 +12,36 @@
         <nav>
             <ul>
                 <li><input type="text" id="search-input" placeholder="Search resources..." onkeyup="searchResources()"></li>
-                <li><a href="#" onclick="showProfile()">Profile</a></li>
+                <li><a href="#" onclick="editProfile()">Edit Profile</a></li>
                 <li><a href="#" onclick="logout()">Logout</a></li>
             </ul>
         </nav>
     </header>    
 
     <main>
-        <!-- Profile Section -->
         <section id="profile">
-            <h2>Profile</h2>
-            <p><span id="user-name">Loading...</span></p>
-            <p><span id="user-email">Loading...</span></p>
-            <button onclick="editProfile()">Edit Profile</button>
+            <h2>Profile Information</h2>
+            <p><strong></strong> <span id="user-name">Loading...</span></p>
+            <p><strong></strong> <span id="user-email">Loading...</span></p>
+            <p><strong></strong> <span id="user-dob">Loading...</span></p>
+            <p><strong></strong> <span id="user-mobile">Loading...</span></p>
+            <p><strong></strong> <span id="user-pincode">Loading...</span></p>
+            <p><strong></strong> <span id="user-subject">Loading...</span></p>
+            <p><strong></strong> <span id="user-created">Loading...</span></p>
         </section>
         
-        <!-- Profile Edit Popup -->
-        <div id="edit-profile-popup" class="popup">
+        <div id="edit-profile-popup" class="popup" style="display: none;">
             <h2>Edit Profile</h2>
-            <label for="new-name">New Name:</label>
             <input type="text" id="new-name" placeholder="Enter new name">
-            <label for="new-email">New Email:</label>
             <input type="email" id="new-email" placeholder="Enter new email">
+            <input type="date" id="new-dob">
+            <input type="text" id="new-mobile" placeholder="Enter mobile number">
+            <input type="text" id="new-pincode" placeholder="Enter pincode">
+            <input type="text" id="new-subject" placeholder="Enter subject interest">
             <button onclick="updateProfile()">Save Changes</button>
-            <button class="cancel-btn" onclick="closePopup()">Cancel</button>
+            <button onclick="closePopup()">Cancel</button>
         </div>
 
-        <!-- Resources Section -->
         <section id="resources">
             <h2>Available Resources</h2>
             <div id="resources-container">

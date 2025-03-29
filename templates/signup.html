@@ -6,12 +6,11 @@
     <title>Sign Up</title>
     <link rel="stylesheet" href="/styles/style.css">
     <style>
-        /* General Styling */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-image: url('signup.jpg'); /* Keep background image */
+            background-image: url('signup.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -20,25 +19,19 @@
             justify-content: center;
             height: 100vh;
         }
-        
-        /* Signup Container */
         .signup-container {
             background: rgba(255, 255, 255, 0.95);
             padding: 40px;
             border-radius: 12px;
             box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
             text-align: center;
-            width: 350px;
+            width: 400px;
         }
-
-        /* Headings */
         h1 {
             font-size: 28px;
             color: #007bff;
             margin-bottom: 20px;
         }
-
-        /* Input Fields */
         input {
             width: 100%;
             padding: 12px;
@@ -47,8 +40,6 @@
             border-radius: 6px;
             font-size: 16px;
         }
-
-        /* Signup Button */
         .submit-button {
             background-color: #007bff;
             color: white;
@@ -61,31 +52,25 @@
             font-weight: bold;
             transition: background 0.3s ease;
         }
-
         .submit-button:hover {
             background-color: #0056b3;
         }
-
-        /* Styled Sign In Button */
-.signin-btn {
-    background-color: #007bff; /* Same blue as other buttons */
-    color: white;
-    padding: 8px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 14px;
-    font-weight: bold;
-    transition: background 0.3s ease, transform 0.2s ease;
-    display: inline-block;
-    margin-top: 10px;
-}
-
-.signin-btn:hover {
-    background-color: #0056b3; /* Darker blue on hover */
-    transform: scale(1.05);
-}
-
+        .signin-btn {
+            background-color: #007bff;
+            color: white;
+            padding: 8px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+            margin-top: 10px;
+            transition: 0.3s;
+        }
+        .signin-btn:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
     </style>
 </head>
 <body>
@@ -97,13 +82,25 @@
             <input type="text" name="name" id="name" placeholder="Enter your name" required>
 
             <label for="email">Email:</label>
-            <input type="email" name="email" id="email" placeholder="Enter your email-id" required>
+            <input type="email" name="email" id="email" placeholder="Enter your email" required>
 
             <label for="password">Password:</label>
-            <input type="password" name="password" id="password" placeholder="Enter your password" maxlength="14" required>
+            <input type="password" name="password" id="password" placeholder="Enter password" maxlength="14" required>
 
             <label for="confirm_password">Confirm Password:</label>
-            <input type="password" name="confirm_password" id="confirm_password" placeholder="Re-enter your password" maxlength="14" required>
+            <input type="password" name="confirm_password" id="confirm_password" placeholder="Confirm password" maxlength="14" required>
+
+            <label for="dob">Date of Birth:</label>
+            <input type="date" name="dob" id="dob" required>
+
+            <label for="mobile">Mobile Number:</label>
+            <input type="text" name="mobile" id="mobile" placeholder="Enter mobile number" required>
+
+            <label for="pincode">Pincode:</label>
+            <input type="text" name="pincode" id="pincode" placeholder="Enter pincode" required>
+
+            <label for="subject_interest">Subject Interest:</label>
+            <input type="text" name="subject_interest" id="subject_interest" placeholder="Ex: DSA, Web Dev, System Design" required>
 
             <button type="submit" class="submit-button">Sign Up</button>
 
@@ -115,14 +112,17 @@
 
     <script>
         document.getElementById('signup-form').addEventListener('submit', async (e) => {
-            e.preventDefault(); // Prevents the page from reloading
-            
+            e.preventDefault();
+
             const name = document.getElementById('name').value;
             const email = document.getElementById('email').value;
             const password = document.getElementById('password').value;
             const confirmPassword = document.getElementById('confirm_password').value;
+            const dob = document.getElementById('dob').value;
+            const mobile = document.getElementById('mobile').value;
+            const pincode = document.getElementById('pincode').value;
+            const subject_interest = document.getElementById('subject_interest').value;
 
-            // Check if passwords match
             if (password !== confirmPassword) {
                 alert("Passwords do not match!");
                 return;
@@ -132,16 +132,16 @@
                 const response = await fetch('http://localhost:3000/signup', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ name, email, password })
+                    body: JSON.stringify({ name, email, password, dob, mobile, pincode, subject_interest })
                 });
 
                 const data = await response.json();
 
                 if (response.ok) {
-                    alert(data.message); // Show success message
-                    window.location.href = 'login.html'; // Redirect to login page
+                    alert(data.message);
+                    window.location.href = 'login.html';
                 } else {
-                    alert(data.error); // Show error message
+                    alert(data.error);
                 }
             } catch (error) {
                 console.error("Error:", error);
