@@ -1,0 +1,35 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "NODE_ENV=production node server.js",
+    "dev": "nodemon server.js",
+    "build": "./scripts/build.sh",
+    "dev:both": "./scripts/dev.sh",
+    "dev:frontend": "cd frontend && npm run dev",
+    "build:frontend": "cd frontend && npm run build",
+    "install:frontend": "cd frontend && npm install",
+    "heroku-postbuild": "npm run install:frontend && npm run build:frontend",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  },
+  "dependencies": {
+    "axios": "^1.11.0",
+    "bcryptjs": "^3.0.2",
+    "cors": "^1.0.0",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "google-auth-library": "^9.15.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.9.4",
+    "node-cache": "^5.1.2",
+    "path": "^0.12.7"
+  }
+}
