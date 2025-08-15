@@ -6,6 +6,3 @@ node_modules/
 
 # Ignore OS-specific files
 .DS_Store
-
-
-vercel.json
