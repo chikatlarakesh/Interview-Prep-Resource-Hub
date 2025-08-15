@@ -1,5 +1,5 @@
 const axios = require('axios');
-
+require('dotenv').config();
 const GITHUB_USERNAME = 'chikatlarakesh';
 const REPO_NAME = 'Interview-Prep';
 const githubBaseURL = `https://api.github.com/repos/${GITHUB_USERNAME}/${REPO_NAME}/contents`;
